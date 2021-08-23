@@ -1,0 +1,88 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %}
+            <div class="main-content">
+              <div class="page-content">
+                    <div class="container-fluid">
+                            <div class="row">
+
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">User Details</h4>
+                                        <form method="POST" action="{% url 'profile' %} " enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            <div class="media">
+                                           
+                                            <img class="rounded-circle account-img" src="{{ data.image.url}}">
+                                           
+                                            <div class="mb-3 row">
+                                                <input type="file" name="image" accept="" value="{{ data.image.url}}"/>
+                                            </div>
+                                            <div class="media-body">
+                                              <h2 class="account-heading">{{ data.username }}</h2>
+                                            </div>
+                                        <div class="mb-3 row">
+                                            <label for="name" class="col-md-2 col-form-label">Username</label>
+                                            <div class="col-md-10">
+                                                <input name="name" class="form-control" type="text" value="{{ data.username }}" id="example-text-input">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="mobileno" class="col-md-2 col-form-label">Mobile No</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" name="mobileno" type="number" value="{{data.mobileno}}" id="example-search-input">
+                                            </div>
+                                           
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="email" class="col-md-2 col-form-label">Email</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" name="email" type="email" value="{{data.email}}" id="example-email-input">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="about" class="col-md-2 col-form-label">About</label>
+                                            <div class="col-md-10">
+                                                <input name="about" class="form-control" type="text" value="{{data.about}}" id="example-url-input">
+                                            </div>
+                                        </div>               
+                                        <div class="mb-3 row">
+                                            <label for="dateofbirth" class="col-md-2 col-form-label">Date of Birth</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" name="dateofbirth" type="date" value="{{data.dateofbirth}}" required=True id="example-datetime-local-input">
+                                            </div>
+                                         
+                                        </div>
+                                        <!-- <div class="mb-3 row">
+                                            <label for="example-datetime-local-input" class="col-md-2 col-form-label">Password</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="password" value="{{data.password}}" id="example-datetime-local-input">
+                                            </div>
+                                        </div> -->
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div> 
+                        </div>
+                        
+                    </div> 
+                </div>
+            </div>
+
+        </div>
+        <div class="right-bar">
+            <div data-simplebar class="h-100">
+
+                <div class="rightbar-title d-flex align-items-center px-3 py-4">
+            
+                    <h5 class="m-0 me-2">Settings</h5>
+
+                    <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
+                        <i class="mdi mdi-close noti-icon"></i>
+                    </a>
+                </div>    
+        </div>
+ 
+{% endblock %}

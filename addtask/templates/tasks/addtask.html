@@ -1,0 +1,148 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %}
+<div class="main-content">
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Add Your Task</h4>
+                            <form method="POST">
+                                {%csrf_token%}
+                                <div class="mb-3 row">
+                                    <label for="uid" class="col-md-2 col-form-label">User id:</label>
+                                    <div class="col-md-10">
+                                        <input name="uid" class="form-control" type="number" value=""
+                                            id="example-text-input">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="taskname" class="col-md-2 col-form-label">
+                                        Name of task:</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" name="taskname" type="text" value=""
+                                            id="example-search-input">
+                                    </div>
+
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="details" class="col-md-2 col-form-label">Details:</label>
+                                    <div class="col-md-10">
+                                        <textarea class="form-control" name="details" rows="4"
+                                            id="example-email-input"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="sdate" class="col-md-2 col-form-label">Start Date:</label>
+                                    <div class="col-md-10">
+                                        <input name="sdate" class="form-control" type="date" value=""
+                                            id="example-url-input">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="edate" class="col-md-2 col-form-label">End date:</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" name="edate" type="date" value="" required=True
+                                            id="example-datetime-local-input">
+                                    </div>
+
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="stime" class="col-md-2 col-form-label">Start Time:</label>
+                                    <div class="col-md-10">
+                                        <input name="stime" class="form-control" type="time" value=""
+                                            id="example-datetime-local-input">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="etime" class="col-md-2 col-form-label">End Time:</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" name="etime" type="time" value=""
+                                            id="example-datetime-local-input">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </form>
+                             <!-- <form method="POST" action="{% url 'tasklist' %}">
+                                {% csrf_token %}
+
+                                <div class="mb-3 row">
+                                    <label for="uid" class="col-md-2 col-form-label">User id:</label>
+                                    <div class="col-md-10">
+                                        <input name="uid" class="form-control" type="number" value=""
+                                            id="example-text-input">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="taskname" class="col-md-2 col-form-label">
+                                        Name of task:</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" name="taskname" type="text" value=""
+                                            id="example-search-input">
+                                    </div>
+
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="details" class="col-md-2 col-form-label">Details:</label>
+                                    <div class="col-md-10">
+                                        <textarea class="form-control" name="details" rows="4"
+                                            id="example-email-input"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="sdate" class="col-md-2 col-form-label">Start Date:</label>
+                                    <div class="col-md-10">
+                                        <input name="sdate" class="form-control" type="date" value=""
+                                            id="example-url-input">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="edate" class="col-md-2 col-form-label">End date:</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" name="edate" type="date" value="" required=True
+                                            id="example-datetime-local-input">
+                                    </div>
+
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="stime" class="col-md-2 col-form-label">Start Time:</label>
+                                    <div class="col-md-10">
+                                        <input name="stime" class="form-control" type="text" value=""
+                                            id="example-datetime-local-input">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="etime" class="col-md-2 col-form-label">End Time:</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" name="etime" type="text" value=""
+                                            id="example-datetime-local-input">
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </form> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<div class="right-bar">
+    <div data-simplebar class="h-100">
+
+        <div class="rightbar-title d-flex align-items-center px-3 py-4">
+
+            <h5 class="m-0 me-2">Settings</h5>
+
+            <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
+                <i class="mdi mdi-close noti-icon"></i>
+            </a>
+        </div>
+    </div>
+
+    {% endblock %}
