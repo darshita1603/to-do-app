@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link href="{% static 'assets/main.css' %}" rel="stylesheet" type="text/css">
+<div class="main-content">
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-flex align-items-center justify-content-between">
+                        <h4 class="mb-0">Download Task History CSV </h4>
+                        </div>
+                        </div>
+                        </div>
+            <div class="content-section">
+                    <fieldset class="form-group">
+                        <h2>Are you sure you wont to change download task history csv </h2>
+                    </fieldset><br><br>
+                    <div class="form-group">
+                        <a href ="{% static a %}" download="files.csv"><button class="btn btn-outline-danger" type="submit">Yes,Download</button></a>
+                        <a class="btn btn-outline-secondary" href="{% url 'tasklist' %}">No, Not Download</a>
+                    </div>
+                </form>
+            </div>
+            </div>
+            </div>
+            </div>
+
+{% endblock content %}

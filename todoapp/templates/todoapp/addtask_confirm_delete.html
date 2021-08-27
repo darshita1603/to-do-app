@@ -5,7 +5,7 @@
 <div class="main-content">
     <div class="page-content">
           <div class="container-fluid">
-    <form class="crispy-form" method="POST" action="{% url 'tasklist'%}" enctype="multipart/form-data">
+        <form class="crispy-form" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <fieldset class="formgroup">
             <legend class="border-bottom mb-4">
@@ -14,11 +14,14 @@
                     {{form|crispy}}
                 </div>
             </legend>
+            <h2>Are You sure wanna delete the Post {{ object }} ??</h2>
         </fieldset>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Request Password Reset</button>
-        </div>
+        
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Delete</button>
+                <a class="btn btn-outline-danger" href="{% url 'tasklist'%}" >Cancel</a>
+            </div>
+             
     </form>
           </div>
           </div>

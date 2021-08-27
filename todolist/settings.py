@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todoapp',
     'addtask',
+    'floppyforms',
     'crispy_forms',
     'fontawesome_free',
     'django_tables2',
@@ -130,7 +131,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/login/login/'
+LOGIN_REDIRECT_URL = 'login'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

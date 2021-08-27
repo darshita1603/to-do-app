@@ -19,11 +19,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path,include
 
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/',include("todoapp.urls")),
+    path('',include("todoapp.urls")),
     path('tasks/',include('addtask.urls')),
 ]
 if settings.DEBUG:

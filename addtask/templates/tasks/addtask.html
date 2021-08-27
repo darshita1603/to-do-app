@@ -9,15 +9,15 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Add Your Task</h4>
-                            <form method="POST">
+                            <form method="POST"  onSubmit="if(!confirm('Are you sure to Add data?')){return false;}">
                                 {%csrf_token%}
-                                <div class="mb-3 row">
+                                <!-- <div class="mb-3 row">
                                     <label for="uid" class="col-md-2 col-form-label">User id:</label>
                                     <div class="col-md-10">
                                         <input name="uid" class="form-control" type="number" value=""
                                             id="example-text-input">
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="mb-3 row">
                                     <label for="taskname" class="col-md-2 col-form-label">
                                         Name of task:</label>
@@ -63,7 +63,7 @@
                                             id="example-datetime-local-input">
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Update</button>
+                                <button type="submit" class="btn btn-primary">Add Task</button>
                             </form>
                              <!-- <form method="POST" action="{% url 'tasklist' %}">
                                 {% csrf_token %}

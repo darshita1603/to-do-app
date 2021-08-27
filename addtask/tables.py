@@ -1,4 +1,5 @@
 import django_tables2 as tables
+from floppyforms import fields
 from todoapp.models import AddTask
 
 class CompleteTable(tables.Table):
@@ -7,4 +8,18 @@ class CompleteTable(tables.Table):
     class Meta:
         model = AddTask
         template_name = "django_tables2/bootstrap-responsive.html"
-        fields = ("user_id","name_of_task","create_date","end_date","create_time","end_time")
+        fields = ("name_of_task","create_date","end_date","create_time","end_time")
+
+class CompleteTask(tables.Table):
+
+    class Meta:
+        model=AddTask
+        template_name = "django_tables2/bootstrap-responsive.html"
+        fields=("name_of_task","create_date","end_date","create_time","end_time")
+
+class PendingTask(tables.Table):
+
+    class Meta:
+        model=AddTask
+        template_name = "django_tables2/bootstrap-responsive.html"
+        fields=("name_of_task","create_date","end_date","create_time","end_time")

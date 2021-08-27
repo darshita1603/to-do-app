@@ -1,0 +1,114 @@
+{% load static%}
+<div class="main-content">
+
+    <div class="page-content">
+        <div class="container-fluid">
+
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-flex align-items-center justify-content-between">
+                        <h4 class="mb-0">Invoice Detail</h4>
+
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Invoices</a></li>
+                                <li class="breadcrumb-item active">Invoice Detail</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="invoice-title"></div>
+                                <div class="mb-4">
+                                    <img src="{% static 'assets/images/logo-dark.png'%}" alt="logo" height="20"/>
+                                </div>
+                                <div class="text-muted">
+                                    <p class="mb-1">401-405, One World West, 200,<br>
+                                        Sardar Patel Ring Rd, Ambli, <br>Ahmedabad, Gujarat 380058</p>
+                                    <p class="mb-1"><b>darshitactridhyatech@gmail.com</b></i></p>
+                                    <p><i class="uil uil-phone me-1"></i><b>+91-9858621470</b></p>
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="text-muted">
+                                        <h5 class="font-size-16 mb-3">Task To:</h5>
+                                        <h5 class="font-size-15 mb-2">Admin</h5>
+                                        <p class="mb-1">darshita123@gmail.com</p>
+                                    </div>
+                                </div>        
+                            <div class="py-2">
+                                <h5 class="font-size-15">Order summary</h5>
+
+                                <div class="table-responsive">
+                                    <table class="table table-nowrap table-centered mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 70px;">No.</th>
+                                                <th>Task Name</th>
+                                                <th>Create Date</th>
+                                                <th>End Date</th>
+                                                <th>Create Time</th>
+                                                <th>End Time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">{{pdf.id}}</th>
+                                                <td>
+                                                    <h5 class="font-size-15 mb-1">{{pdf.name_of_task}}</h5>
+                                                </td>
+                                                <td>{{pdf.create_date}}</td>
+                                                <td>{{pdf.end_date}}</td>
+                                                <td>{{pdf.create_time}}</td>
+                                                <td>{{pdf.end_time}}</td>
+                                            </tr>
+                                            
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- <div class="d-print-none mt-4">
+                                    <div class="float-end">
+                                        <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light me-1"><i class="fa fa-print"></i></a>
+                                        <a href="#" class="btn btn-primary w-md waves-effect waves-light">Send</a>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+            
+        </div> <!-- container-fluid -->
+    </div>
+    <!-- End Page-content -->
+
+    
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <script>document.write(new Date().getFullYear())</script> © Minible.
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end d-none d-sm-block">
+                        Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="https://themesbrand.com/" target="_blank" class="text-reset">Themesbrand</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.deletion import CASCADE
 from django.utils import timezone
 
 # Create your models here.
@@ -17,7 +18,7 @@ class Registration(models.Model):
         return self.username
 
 class AddTask(models.Model):
-    user_id=models.IntegerField()
+    user=models.ForeignKey(Registration,on_delete=models.CASCADE)
     name_of_task=models.CharField(max_length=255)
     details=models.TextField()
     create_date=models.DateField(auto_now_add=True)
@@ -25,7 +26,6 @@ class AddTask(models.Model):
     create_time=models.TimeField(auto_now_add=True)
     end_time=models.TimeField()
     complete=models.BooleanField(default=False)
-   
 
     def __str__(self):
         return self.name_of_task
